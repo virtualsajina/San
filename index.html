@@ -2,303 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Anil Lama Portfolio - Founder of Nepali Typing Center, L1 Lead at Fonepay, and Digital Payment Enthusiast." />
-  <meta name="author" content="Anil Lama" />
-  <title>Anil Lama | Portfolio</title>
-  
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAN Ladies Wear | Premium Woolen Fashion</title>
   <style>
-    /* ---------- Reset ---------- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #f4f6f8;
-      color: #333;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
-    a:hover { color: #1565c0; }
+    * { box-sizing: border-box; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+    body { margin:0; padding-top:120px; background:#f6f3f1; color:#333; }
 
-    /* ---------- Header ---------- */
-    header {
-      background-color: #0d47a1;
-      color: #fff;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    header img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      object-fit: cover;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    header img:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
-    header h1 { font-size: 2.2rem; margin-bottom: 8px; }
-    header h2 { font-weight: 400; font-size: 1.1rem; margin-bottom: 15px; }
+    /* Header */
+    header { position:fixed; top:0; left:0; width:100%; z-index:1000; background:#6d3f67; color:white; padding:18px 20px; }
+    .header-inner { max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+    .logo { display:flex; align-items:center; gap:12px; }
+    .logo-box { width:45px; height:45px; border-radius:50%; background:white; color:#6d3f67; display:flex; align-items:center; justify-content:center; font-weight:bold; }
+    nav a { color:white; text-decoration:none; margin:0 12px; font-size:0.95rem; }
+    .buy-btn { background:white; color:#6d3f67; padding:8px 16px; border-radius:20px; font-weight:600; }
 
-    /* ---------- Social Links ---------- */
-    .social-nav { margin-top: 10px; }
-    .social-nav a { margin: 0 8px; font-size: 1.3rem; color: #fff; transition: color 0.3s ease; }
-    .social-nav a:hover { color: #ffca28; }
+    /* Sections */
+    .container { max-width:1200px; margin:auto; padding:50px 20px; }
+    h2 { text-align:center; margin-bottom:30px; }
 
-    /* ---------- Sections ---------- */
-    section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 25px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    section:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
-    section h2 {
-      color: #0d47a1;
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      border-bottom: 3px solid #ffca28;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
+    /* Products */
+    .products { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:30px; }
+    .card { background:white; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,0.08); overflow:hidden; }
+    .card img { width:100%; height:220px; object-fit:cover; background:#eee; }
+    .card-content { padding:20px; }
+    .price { font-size:1.2rem; font-weight:bold; margin:10px 0; }
+    .add-cart { background:#6d3f67; color:white; border:none; padding:10px 16px; border-radius:20px; cursor:pointer; }
 
-    /* ---------- Cards ---------- */
-    .card {
-      background: #fafafa;
-      padding: 18px;
-      border-radius: 8px;
-      margin-top: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-    }
-    .card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.15); transform: translateY(-3px); }
+    /* Cart */
+    .cart { position:fixed; bottom:25px; right:25px; background:#6d3f67; color:white; padding:14px 18px; border-radius:50%; font-size:1.2rem; cursor:pointer; z-index:1000; }
+    .cart-box { display:none; position:fixed; right:25px; bottom:90px; background:white; width:300px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.2); padding:20px; }
 
-    /* ---------- Certificates ---------- */
-    .certificate-img {
-      width: 80%;
-      max-width: 350px;
-      display: block;
-      margin: 12px auto;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    }
+    /* Order Form */
+    form input, form textarea { width:100%; padding:10px; margin:8px 0; border-radius:6px; border:1px solid #ccc; }
+    form button { background:#6d3f67; color:white; border:none; padding:12px; border-radius:25px; width:100%; font-size:1rem; }
 
-    /* ---------- Buttons ---------- */
-    .btn {
-      display: inline-block;
-      padding: 8px 18px;
-      background-color: #0d47a1;
-      color: #fff;
-      border-radius: 25px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-top: 10px;
-      text-align: center;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #1565c0;
-      transform: translateY(-2px) scale(1.05);
-      box-shadow: 0 5px 12px rgba(0,0,0,0.25);
-    }
-
-    /* ---------- Footer ---------- */
-    footer {
-      background-color: #0d47a1;
-      color: #fff;
-      padding: 20px 15px;
-      text-align: center;
-      margin-top: 50px;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
-    }
-    .footer-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 25px;
-      margin-bottom: 10px;
-    }
-    .footer-container a {
-      color: #fff;
-      font-size: 0.95rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      position: relative;
-      padding: 5px 8px;
-      transition: all 0.3s ease-in-out;
-    }
-    .footer-container a i { color: #ffca28; transition: transform 0.3s ease; }
-    .footer-container a:hover { color: #ffca28; }
-    .footer-container a:hover i { transform: rotate(15deg) scale(1.2); }
-    .footer-container a::after {
-      content: "";
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -3px;
-      left: 0;
-      background-color: #ffca28;
-      transition: width 0.3s ease-in-out;
-    }
-    .footer-container a:hover::after { width: 100%; }
-    footer p { font-size: 0.85rem; color: #ccc; margin-top: 8px; }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 768px) {
-      header img { width: 100px; height: 100px; }
-      .footer-container { flex-direction: column; gap: 12px; }
-    }
+    footer { background:#2f2f2f; color:white; text-align:center; padding:30px 15px; margin-top:50px; }
   </style>
-
-  <!-- Scroll to top on refresh -->
-  <script>
-    window.addEventListener("load", () => {
-      // Scroll to top
-      window.scrollTo(0, 0);
-
-      // Remove hash if any
-      if (window.location.hash) {
-        history.replaceState(null, null, window.location.pathname);
-      }
-    });
-  </script>
-
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <img src="Amal.jpg" alt="Anil Lama" />
-    <h1>ANIL LAMA (अनिल लामा)</h1>
-    <h2>Founder | Nepali Typing Center | L1 Lead at Fonepay</h2>
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-box">SAN</div>
+      <div>
+        <strong>SAN Ladies Wear</strong><br>
+        <small>Premium Woolen Fashion</small>
+      </div>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+      <a class="buy-btn" href="https://wa.me/" target="_blank">Buy Now</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="social-nav">
-      <a href="https://www.youtube.com/@anillama9033" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=100005158245674" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.linkedin.com/in/anil-l-3b0a23236/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.instagram.com/anil.lama__" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
+<div id="home" class="container">
+  <h2>About SAN Ladies Wear</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    SAN Ladies Wear offers premium-quality woolen clothing designed for comfort, elegance, and everyday style.
+    All our products are free-size and crafted with care for modern women.
+  </p>
+</div>
 
-    <div class="footer-container">
-      <a href="#about"><i class="fas fa-user"></i> About</a>
-      <a href="#awards"><i class="fas fa-award"></i> Awards</a>
-      <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-      <a href="#training"><i class="fas fa-certificate"></i> Certifications</a>
-      <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
-      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-      <a href="#typing"><i class="fas fa-keyboard"></i> Typing Tool</a>
-    </div>
-  </header>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Welcome to my portfolio! I am <strong>Anil Lama</strong>, as an L1 Lead at Fonepay, dedicated to driving efficiency and innovation in the digital payment sector. With a strong work ethic and a passion for technology, I thrive in fast-paced environments, ensuring seamless operations and delivering impactful solutions.</p>
-    <p>I enjoy solving challenges, improving processes, and continuously enhancing digital experiences.</p>
-  </section>
-
-  <!-- Awards Section -->
-  <section id="awards">
-    <h2>Awards & Achievements</h2>
+<div id="products" class="container">
+  <h2>Our Collection</h2>
+  <div class="products">
     <div class="card">
-      <h3>Quarterly Impact Award - 2024</h3>
-      <p>I am honored to have received the Quarterly Impact Award, recognizing my dedication and contributions at Fonepay.</p>
-      <a href="https://www.linkedin.com/posts/fonepaynepal_hardwork-dedication-impact-activity-7339135682180800513-Jhej/" target="_blank" class="btn">View Achievement</a>
+      <img src="" alt="Crop Top">
+      <div class="card-content">
+        <h3>Woolen Crop Top</h3>
+        <p>Stylish, warm, and perfect for casual wear.</p>
+        <p class="price">₹899</p>
+        <button class="add-cart" onclick="addToCart('Crop Top',899)">Add to Cart</button>
+      </div>
     </div>
 
     <div class="card">
-      <h3>Nepali Typing Center</h3>
-      <p>I successfully launched and manage the Nepali Typing Center, which is now running smoothly on Google Marketplace.</p>
-      <a href="https://g.co/kgs/sqaEEzb" target="_blank" class="btn">Check It Out</a>
+      <img src="" alt="Skirt">
+      <div class="card-content">
+        <h3>Woolen Skirt</h3>
+        <p>Elegant design suitable for all occasions.</p>
+        <p class="price">₹1199</p>
+        <button class="add-cart" onclick="addToCart('Skirt',1199)">Add to Cart</button>
+      </div>
     </div>
-  </section>
 
-  <!-- Education Section -->
-  <section id="education">
-    <h2>Education</h2>
     <div class="card">
-      <h3>Bachelor in Social Work (BSW)</h3>
-      <p>Tribhuvan University | 2020 – 2025 (Expected)</p>
+      <img src="" alt="T-Shirt">
+      <div class="card-content">
+        <h3>Woolen T-Shirt</h3>
+        <p>Soft, breathable, and comfortable.</p>
+        <p class="price">₹799</p>
+        <button class="add-cart" onclick="addToCart('T-Shirt',799)">Add to Cart</button>
+      </div>
     </div>
-    <div class="card">
-      <h3>Higher Secondary (12th Grade)</h3>
-      <p>Unique College | 2018 – 2020</p>
-    </div>
-  </section>
+  </div>
+</div>
 
-  <!-- Training Section -->
-  <section id="training">
-    <h2>Training & Certifications</h2>
-    <div class="card">
-      <h3>Microsoft Excel 101</h3>
-      <p>Satyava Digital Class – 2023</p>
-      <img src="excel.png" alt="Microsoft Excel Certificate" class="certificate-img" />
-    </div>
-    <div class="card">
-      <h3>Google Analytics Certification</h3>
-      <p>Issued by Google Skillshop</p>
-      <img src="Google Analytics.png" alt="Google Analytics Certificate" class="certificate-img" />
-    </div>
-    <div class="card">
-      <h3>Photoshop & Editing (Basic)</h3>
-      <p>I have learned Photoshop and image editing through self-study on YouTube, enabling me to create visually appealing graphics, edit images, and enhance digital content.</p>
-    </div>
-  </section>
+<div id="order" class="container">
+  <h2>Place Your Order</h2>
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <textarea rows="3" placeholder="Delivery Address" required></textarea>
+    <button type="submit">Submit Order</button>
+  </form>
+</div>
 
-  <!-- Experience Section -->
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="card">
-      <h3>Manish Enterprises | Accountant & Marketing Manager</h3>
-      <p>2018 – 2022</p>
-      <p>Managed accounting operations and marketing initiatives for four years. Responsible for building customer relationships, providing top-notch services, and contributing to technical aspects of DIY product development.</p>
-    </div>
-    <div class="card">
-      <h3>Roshi Handicraft | Manager</h3>
-      <p>2022</p>
-      <p>Oversaw multiple projects, organized training for women empowerment initiatives, and enhanced personal and professional skills.</p>
-    </div>
-    <div class="card">
-      <h3>Fonepay | L1 Lead</h3>
-      <p>2022 – Present</p>
-      <p>Key role in ensuring seamless digital payment operations, optimizing processes, and contributing to company growth through innovation and efficiency.</p>
-    </div>
-  </section>
+<footer id="contact">
+  <p><strong>Contact Us</strong></p>
+  <p>WhatsApp: +91 XXXXXXXXXX</p>
+  <p>Email: sanladieswear@gmail.com</p>
+  <p>© 2025 SAN Ladies Wear</p>
+</footer>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p><strong>Email:</strong> <a href="mailto:lanil9033@gmail.com">lanil9033@gmail.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+9865585569">+977 9865585569</a></p>
-    </div>
-  </section>
+<div class="cart" onclick="toggleCart()">🛒</div>
+<div class="cart-box" id="cartBox">
+  <h3>Cart</h3>
+  <ul id="cartItems"></ul>
+</div>
 
-  <!-- Nepali Typing Tool Section -->
-  <section id="typing">
-    <h2>Nepali Typing Converter</h2>
-    <iframe src="https://www.ashesh.com.np/linknepali-unicode3.php?api=492041p542"
-            width="100%" height="360" frameborder="0" scrolling="no"
-            style="border-radius: 8px;"></iframe>
-    <p style="font-size: 12px; text-align: center; margin-top: 8px; color: #888;">© Nepali Unicode</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Anil Lama | All Rights Reserved.</p>
-  </footer>
+<script>
+  let cart = [];
+  function addToCart(name, price){ cart.push({name, price}); renderCart(); alert(name+' added to cart'); }
+  function renderCart(){ let list=document.getElementById('cartItems'); list.innerHTML=''; cart.forEach(i=>{ let li=document.createElement('li'); li.textContent=i.name+' - ₹'+i.price; list.appendChild(li); }); }
+  function toggleCart(){ let box=document.getElementById('cartBox'); box.style.display = box.style.display==='block'?'none':'block'; }
+</script>
 
 </body>
 </html>
