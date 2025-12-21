@@ -1,136 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SAN Ladies Wear | Premium Woolen Fashion</title>
-  <style>
-    * { box-sizing: border-box; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
-    body { margin:0; padding-top:120px; background:#f6f3f1; color:#333; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAN Ladies Wear</title>
 
-    /* Header */
-    header { position:fixed; top:0; left:0; width:100%; z-index:1000; background:#6d3f67; color:white; padding:18px 20px; }
-    .header-inner { max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:12px; }
-    .logo-box { width:45px; height:45px; border-radius:50%; background:white; color:#6d3f67; display:flex; align-items:center; justify-content:center; font-weight:bold; }
-    nav a { color:white; text-decoration:none; margin:0 12px; font-size:0.95rem; }
-    .buy-btn { background:white; color:#6d3f67; padding:8px 16px; border-radius:20px; font-weight:600; }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    /* Sections */
-    .container { max-width:1200px; margin:auto; padding:50px 20px; }
-    h2 { text-align:center; margin-bottom:30px; }
+<style>
+:root{
+  --brand:#FFF2CD;
+  --dark:#222;
+}
+*{box-sizing:border-box;font-family:Poppins,Segoe UI,sans-serif}
 
-    /* Products */
-    .products { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:30px; }
-    .card { background:white; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,0.08); overflow:hidden; }
-    .card img { width:100%; height:220px; object-fit:cover; background:#eee; }
-    .card-content { padding:20px; }
-    .price { font-size:1.2rem; font-weight:bold; margin:10px 0; }
-    .add-cart { background:#6d3f67; color:white; border:none; padding:10px 16px; border-radius:20px; cursor:pointer; }
+/* BODY */
+body{
+  margin:0;
+  padding-top:90px;
+  background:#FFF2CD;
+  color:#333;
+}
 
-    /* Cart */
-    .cart { position:fixed; bottom:25px; right:25px; background:#6d3f67; color:white; padding:14px 18px; border-radius:50%; font-size:1.2rem; cursor:pointer; z-index:1000; }
-    .cart-box { display:none; position:fixed; right:25px; bottom:90px; background:white; width:300px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.2); padding:20px; }
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#fff;
+  border-bottom:1px solid #eee;
+  z-index:1000;
+}
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+}
+.logo img{
+  width:45px;height:45px;border-radius:50%;object-fit:cover
+}
+nav a{
+  margin:0 10px;
+  text-decoration:none;
+  color:#333;
+  font-size:.9rem;
+  font-weight:500;
+}
+.btn{
+  background:#FFF2CD;
+  padding:8px 18px;
+  border-radius:20px;
+  font-weight:600;
+  color:#000;
+  text-decoration:none;
+}
 
-    /* Order Form */
-    form input, form textarea { width:100%; padding:10px; margin:8px 0; border-radius:6px; border:1px solid #ccc; }
-    form button { background:#6d3f67; color:white; border:none; padding:12px; border-radius:25px; width:100%; font-size:1rem; }
+/* HERO */
+.hero{
+  position:relative;
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px;
+}
+.hero-img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  border-radius:25px;
+}
+.hero-text{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:rgba(255,242,205,.85);
+  border-radius:25px;
+}
 
-    footer { background:#2f2f2f; color:white; text-align:center; padding:30px 15px; margin-top:50px; }
-  </style>
+/* SECTIONS */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:70px 20px;
+}
+h2{text-align:center;margin-bottom:40px}
+
+/* ABOUT */
+.about{text-align:center;max-width:800px;margin:auto}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+.card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+.card img{width:100%;height:240px;object-fit:cover}
+.card-content{padding:20px}
+.price{font-weight:700;font-size:1.2rem}
+.card a.btn{display:block;text-align:center;margin-top:10px}
+
+/* REVIEWS */
+.reviews{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.review{
+  background:#fff;
+  padding:25px;
+  border-radius:16px;
+}
+
+/* FORM */
+form{
+  max-width:500px;
+  margin:auto;
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+}
+form input,form textarea{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border:1px solid #ddd;
+  border-radius:10px;
+}
+form button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:25px;
+  background:#FFF2CD;
+  font-weight:600;
+}
+
+/* CONTACT */
+.contact{text-align:center}
+.socials a{
+  display:inline-block;
+  margin:10px;
+  font-size:1.4rem;
+  background:#fff;
+  padding:12px;
+  border-radius:50%;
+  color:#000;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:#fff;
+  padding:40px 20px;
+  text-align:center;
+}
+</style>
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
-  <div class="header-inner">
+  <div class="nav">
     <div class="logo">
-      <div class="logo-box">SAN</div>
-      <div>
-        <strong>SAN Ladies Wear</strong><br>
-        <small>Premium Woolen Fashion</small>
-      </div>
+      <img src="https://scontent.fktm7-1.fna.fbcdn.net/v/t39.30808-6/599457078_867349965802245_727950078402519382_n.jpg">
+      SAN Ladies Wear
     </div>
     <nav>
       <a href="#home">Home</a>
+      <a href="#about">About</a>
       <a href="#products">Products</a>
       <a href="#order">Order</a>
       <a href="#contact">Contact</a>
-      <a class="buy-btn" href="https://wa.me/" target="_blank">Buy Now</a>
+      <a class="btn" href="https://wa.me/977XXXXXXXXX" target="_blank">WhatsApp</a>
     </nav>
   </div>
 </header>
 
-<div id="home" class="container">
-  <h2>About SAN Ladies Wear</h2>
-  <p style="text-align:center; max-width:800px; margin:auto;">
-    SAN Ladies Wear offers premium-quality woolen clothing designed for comfort, elegance, and everyday style.
-    All our products are free-size and crafted with care for modern women.
-  </p>
-</div>
-
-<div id="products" class="container">
-  <h2>Our Collection</h2>
-  <div class="products">
-    <div class="card">
-      <img src="" alt="Crop Top">
-      <div class="card-content">
-        <h3>Woolen Crop Top</h3>
-        <p>Stylish, warm, and perfect for casual wear.</p>
-        <p class="price">₹899</p>
-        <button class="add-cart" onclick="addToCart('Crop Top',899)">Add to Cart</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="" alt="Skirt">
-      <div class="card-content">
-        <h3>Woolen Skirt</h3>
-        <p>Elegant design suitable for all occasions.</p>
-        <p class="price">₹1199</p>
-        <button class="add-cart" onclick="addToCart('Skirt',1199)">Add to Cart</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="" alt="T-Shirt">
-      <div class="card-content">
-        <h3>Woolen T-Shirt</h3>
-        <p>Soft, breathable, and comfortable.</p>
-        <p class="price">₹799</p>
-        <button class="add-cart" onclick="addToCart('T-Shirt',799)">Add to Cart</button>
-      </div>
-    </div>
+<!-- HERO -->
+<div id="home" class="hero">
+  <img src="https://scontent.fktm7-1.fna.fbcdn.net/v/t39.30808-6/600334387_122093901897181698_2804991506729347631_n.png" class="hero-img">
+  <div class="hero-text">
+    <h1>Elegance Woven in Wool</h1>
+    <p>Premium free-size woolen wear for modern women</p>
   </div>
 </div>
 
-<div id="order" class="container">
-  <h2>Place Your Order</h2>
-  <form>
-    <input type="text" placeholder="Full Name" required>
-    <input type="tel" placeholder="Phone Number" required>
-    <textarea rows="3" placeholder="Delivery Address" required></textarea>
-    <button type="submit">Submit Order</button>
-  </form>
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Us</h2>
+  <p class="about">
+    SAN Ladies Wear provides premium woolen fashion focused on comfort,
+    warmth, and elegance for modern women.
+  </p>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+<h2>Our Collection</h2>
+<div class="products">
+
+<div class="card">
+  <img src="images/crop-top.jpg">
+  <div class="card-content">
+    <h3>Crop Top</h3>
+    <p class="price">₹899</p>
+    <a class="btn" href="https://wa.me/977XXXXXXXXX?text=I%20want%20to%20order%20Crop%20Top" target="_blank">Order on WhatsApp</a>
+  </div>
 </div>
 
-<footer id="contact">
-  <p><strong>Contact Us</strong></p>
-  <p>WhatsApp: +91 XXXXXXXXXX</p>
-  <p>Email: sanladieswear@gmail.com</p>
-  <p>© 2025 SAN Ladies Wear</p>
-</footer>
-
-<div class="cart" onclick="toggleCart()">🛒</div>
-<div class="cart-box" id="cartBox">
-  <h3>Cart</h3>
-  <ul id="cartItems"></ul>
+<div class="card">
+  <img src="images/skirt.jpg">
+  <div class="card-content">
+    <h3>Skirt</h3>
+    <p class="price">₹1199</p>
+    <a class="btn" href="https://wa.me/977XXXXXXXXX?text=I%20want%20to%20order%20Skirt" target="_blank">Order on WhatsApp</a>
+  </div>
 </div>
 
+<div class="card">
+  <img src="images/tshirt.jpg">
+  <div class="card-content">
+    <h3>T-Shirt</h3>
+    <p class="price">₹799</p>
+    <a class="btn" href="https://wa.me/977XXXXXXXXX?text=I%20want%20to%20order%20T-Shirt" target="_blank">Order on WhatsApp</a>
+  </div>
+</div>
+
+</div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+<h2>Customer Reviews</h2>
+<div class="reviews">
+  <div class="review">⭐⭐⭐⭐⭐ Amazing quality!</div>
+  <div class="review">⭐⭐⭐⭐⭐ Very comfortable.</div>
+  <div class="review">⭐⭐⭐⭐⭐ Highly recommended ❤️</div>
+</div>
+</section>
+
+<!-- ORDER FORM (GOOGLE SHEET CONNECTED) -->
+<section id="order">
+<h2>Place Order</h2>
+
+<form id="orderForm">
+  <input type="text" name="name" placeholder="Full Name" required>
+  <input type="tel" name="phone" placeholder="Phone Number" required>
+  <textarea name="address" placeholder="Full Address" required></textarea>
+  <button type="submit">Submit Order</button>
+</form>
+
+<p id="successMsg" style="display:none;text-align:center;color:green;font-weight:600;">
+  ✅ Order submitted successfully!
+</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+<div class="contact">
+  <div class="socials">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+</section>
+
+<footer>© 2025 SAN Ladies Wear</footer>
+
+<!-- GOOGLE SHEET SCRIPT -->
 <script>
-  let cart = [];
-  function addToCart(name, price){ cart.push({name, price}); renderCart(); alert(name+' added to cart'); }
-  function renderCart(){ let list=document.getElementById('cartItems'); list.innerHTML=''; cart.forEach(i=>{ let li=document.createElement('li'); li.textContent=i.name+' - ₹'+i.price; list.appendChild(li); }); }
-  function toggleCart(){ let box=document.getElementById('cartBox'); box.style.display = box.style.display==='block'?'none':'block'; }
+const form = document.getElementById("orderForm");
+const successMsg = document.getElementById("successMsg");
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data = {
+    name: form.name.value,
+    phone: form.phone.value,
+    address: form.address.value
+  };
+
+  fetch("YOUR_GOOGLE_SCRIPT_WEB_APP_URL", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {"Content-Type":"application/json"}
+  })
+  .then(res => res.json())
+  .then(() => {
+    successMsg.style.display = "block";
+    form.reset();
+  })
+  .catch(() => alert("Error submitting order"));
+});
 </script>
 
 </body>
