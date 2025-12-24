@@ -93,8 +93,6 @@ section{
   padding:35px 25px;
   box-shadow:0 12px 30px rgba(0,0,0,0.07);
   margin-bottom:35px;
-
-  /* Animation */
   animation:fadeUp 0.8s ease;
 }
 
@@ -179,21 +177,6 @@ h2{
   margin:8px 0;
 }
 
-/* REVIEWS */
-.reviews{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.review{
-  background:var(--brand);
-  padding:25px;
-  border-radius:16px;
-  text-align:center;
-  font-weight:500;
-}
-
 /* ORDER FORM */
 form{
   max-width:480px;
@@ -219,6 +202,15 @@ form button{
   background:var(--brand);
   font-weight:700;
   cursor:pointer;
+}
+
+/* SOCIAL LINKS BELOW FORM */
+.social-links{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
 }
 
 /* FLOATING SOCIAL ICONS */
@@ -291,8 +283,7 @@ footer{
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#products">Products</a>
-      <a href="#order">Order</a>
-      <a class="btn" href="https://wa.me/9779851359109" target="_blank">WhatsApp</a>
+      <a href="#order">Get in Touch</a>
     </nav>
   </div>
 </header>
@@ -305,7 +296,7 @@ footer{
     <div class="hero-text">
       <h1>STYLIST, ATTRACTIVE & NATURAL</h1>
       <p style="color:#000;background:#fff;padding:10px 18px;border-radius:20px;">
-        SAN Ladies Wear offers stylish, attractive and natural fashion choices that make women feel confident every day.
+        "SAN Ladies Wear" offers stylish, attractive and natural fashion choices that make women feel confident every day.
       </p>
     </div>
   </div>
@@ -315,7 +306,7 @@ footer{
   <div class="section-card">
     <h2>About Us</h2>
     <p class="about">
-      SAN Ladies Wear is an online fashion store offering elegant, trendy and comfortable ladies clothing designed for everyday confidence.
+      "SAN Ladies Wear" is an online fashion store offering elegant, trendy and comfortable ladies clothing designed for everyday confidence.
     </p>
   </div>
 </section>
@@ -325,9 +316,8 @@ footer{
     <h2>Our Collection</h2>
     <div class="products">
 
-      <!-- Product 1 -->
       <div class="card">
-        <img src="Crop Tops.jpg - Copy.jpeg">
+        <img src="Top.jpeg">
         <div class="card-content">
           <h3>Mono Bow Crop Top</h3>
           <p class="price">Rs. 1199</p>
@@ -335,9 +325,8 @@ footer{
         </div>
       </div>
 
-      <!-- Product 2 -->
       <div class="card">
-        <img src="Skirt1.jpg - Copy.jpeg">
+        <img src="SKirt.jpeg">
         <div class="card-content">
           <h3>Noir Rib Midi Skirt</h3>
           <p class="price">Rs. 1799</p>
@@ -345,9 +334,8 @@ footer{
         </div>
       </div>
 
-      <!-- Product 3 -->
       <div class="card">
-        <img src="T-Shirt.jpg - Copy.jpeg">
+        <img src="T-shirt.jpeg">
         <div class="card-content">
           <h3>Beige Rib Knit T-Shirt</h3>
           <p class="price">Rs. 1599</p>
@@ -361,12 +349,55 @@ footer{
 
 <section id="order">
   <div class="section-card">
-    <h2>For More Inquiry</h2>
-    <form>
-      <input placeholder="Full Name" required>
-      <input placeholder="Phone Number" required>
-      <textarea placeholder="Full Address" required></textarea>
-      <button>Submit Order</button>
+    <h2>Get In Touch</h2>
+
+<style>
+  .form-box {
+    max-width: 400px;
+  }
+  .form-box input,
+  .form-box textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+</style>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<form
+  class="form-box"
+  action="https://script.google.com/macros/s/AKfycbynB2Ya822z1U8AOcPKGT8kS7_5YReX9MOA8qqgui4tw4ti2qPUImyIKhayJrDeny_j/exec"
+  method="post"
+  enctype="application/x-www-form-urlencoded"
+  target="hidden_iframe"
+  onsubmit="setTimeout(() => { document.getElementById('success').style.display='block'; this.reset(); }, 300);"
+>
+  <input type="text" name="name" placeholder="Full Name" required>
+  <input type="text" name="phone" placeholder="Phone Number" required>
+  <input type="email" name="email" placeholder="Email Id" required>
+  <textarea name="query" placeholder="About Your Queries" required></textarea>
+  <button type="submit">Submit</button>
+</form>
+
+<p id="success" style="display:none; color:green;">
+  ✅ Submit bhayo! Thank you 🙏
+</p>
+
+
+      <!-- SOCIAL LINKS BELOW SUBMIT -->
+      <div class="social-links">
+        <a class="btn" href="https://www.instagram.com/san_ladies_wear?igsh=MWdmaWVxcng3MHoxaw==" target="_blank">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a class="btn" href="https://www.facebook.com/share/1DP6HMWNsg/" target="_blank">
+          <i class="fab fa-facebook"></i> Facebook
+        </a>
+        <a class="btn" href="https://www.tiktok.com/@san_ladies_wear?_r=1&_t=ZS-92TgdRCTUoy" target="_blank">
+          <i class="fab fa-tiktok"></i> TokTok
+        </a>
+      </div>
+
     </form>
   </div>
 </section>
@@ -378,16 +409,8 @@ footer{
 </footer>
 
 <!-- FLOATING SOCIAL ICONS -->
-<div class="floating-social">
-  <a href="https://www.instagram.com/san_ladies_wear?igsh=MWdmaWVxcng3MHoxaw==" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.facebook.com/share/1DP6HMWNsg/" target="_blank"><i class="fab fa-facebook"></i></a>
-  <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-</div>
 
 <!-- WHATSAPP CHAT -->
 <a class="whatsapp" href="https://wa.me/9779851359109" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
-
-</body>
-</html>
